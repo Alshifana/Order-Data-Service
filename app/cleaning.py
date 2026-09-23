@@ -1,19 +1,3 @@
-"""
-app.cleaning
-------------
-Turns raw, messy order rows (as dicts, straight from csv.DictReader) into
-clean, typed OrderRecord objects — or rejects them with a reason.
-
-Design notes (see README for the full rationale):
-- A row is REJECTED (not silently dropped) when the problem can't be safely
-  fixed without guessing at the client's intent: missing required fields,
-  invalid email, non-numeric quantity/price, or quantity/price <= 0.
-- A row is FIXED in place when the problem is purely cosmetic: inconsistent
-  casing in text fields, or a recognizable-but-non-ISO date format.
-- Exact duplicate rows (same order_id) are rejected after the first is kept.
-- Every rejection is logged with the row's original order_id (if present)
-  and a human-readable reason, so a human can audit what was thrown away.
-"""
 from __future__ import annotations
 
 import re
