@@ -31,7 +31,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Ondravan Orders Service",
+    title="Orders Data Service",
     description="Ingests messy order CSVs, cleans them, stores them in SQLite, "
                 "and exposes customer/product/revenue reports.",
     version="1.0.0",
