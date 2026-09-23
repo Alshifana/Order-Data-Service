@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ondravan Orders Dashboard</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.4rem; }
+  section { margin-bottom: 2.5rem; }
+  h2 { font-size: 1.05rem; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #eee; }
+  th { color: #555; font-weight: 600; }
+  .upload-box { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; }
+  .msg { font-size: 0.85rem; color: #555; }
+  input[type=text] { padding: 6px 8px; }
+  button { padding: 6px 12px; cursor: pointer; }
+</style>
+</head>
+<body>
+  <h1>📦 Ondravan Orders Dashboard</h1>
+
+  <section>
+    <h2>Upload CSV</h2>
+    <div class="upload-box">
+      <input type="file" id="fileInput" accept=".csv">
+      <button onclick="uploadFile()">Upload</button>
+    </div>
+    <div class="msg" id="uploadMsg"></div>
+  </section>
+
+  <section>
+    <h2>Customer Summary</h2>
+    <div class="upload-box">
+      <input type="text" id="customerName" placeholder="Customer name">
+      <button onclick="loadCustomer()">Look up</button>
+    </div>
+    <div class="msg" id="customerMsg"></div>
+  </section>
+
+  <section>
+    <h2>Top Products (by revenue)</h2>
+    <table id="topProducts"><thead><tr><th>Product</th><th>Qty Sold</th><th>Revenue</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section>
+    <h2>Monthly Revenue</h2>
+    <table id="monthlyRevenue"><thead><tr><th>Month</th><th>Revenue</th><th>Orders</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section>
+    <h2>City-wise</h2>
+    <table id="cityWise"><thead><tr><th>City</th><th>Revenue</th><th>Orders</th></tr></thead><tbody></tbody></table>
+  </section>
+
+<script>
+async function refreshAll() {
+  await loadTable('/reports/top-products?limit=10', '#topProducts tbody',
+    r => r.products.map(p => `<tr><td>${p.product}</td><td>${p.total_quantity}</td><td>${p.total_revenue}</td></tr>`).join(''));
+  await loadTable('/reports/monthly-revenue', '#monthlyRevenue tbody',
+    r => r.months.map(m => `<tr><td>${m.month}</td><td>${m.revenue}</td><td>${m.order_count}</td></tr>`).join(''));
+  await loadTable('/reports/city-wise', '#cityWise tbody',
+    r => r.cities.map(c => `<tr><td>${c.city}</td><td>${c.revenue}</td><td>${c.order_count}</td></tr>`).join(''));
+}
+
+async function loadTable(url, selector, renderRows) {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    document.querySelector(selector).innerHTML = renderRows(data);
+  } catch (e) {
+    document.querySelector(selector).innerHTML = `<tr><td colspan="3">Failed to load</td></tr>`;
+  }
+}
+
+async function uploadFile() {
+  const input = document.getElementById('fileInput');
+  const msg = document.getElementById('uploadMsg');
+  if (!input.files.length) { msg.textContent = 'Choose a CSV file first.'; return; }
+  const formData = new FormData();
+  formData.append('file', input.files[0]);
+  msg.textContent = 'Uploading...';
+  try {
+    const res = await fetch('/upload', { method: 'POST', body: formData });
+    const data = await res.json();
+    if (!res.ok) {
+      msg.textContent = `Error: ${data.detail}`;
+      return;
+    }
+    msg.textContent = `Accepted ${data.rows_accepted}, rejected ${data.rows_rejected} (of ${data.rows_read} rows).`;
+    refreshAll();
+  } catch (e) {
+    msg.textContent = 'Upload failed: ' + e;
+  }
+}
+
+async function loadCustomer() {
+  const name = document.getElementById('customerName').value.trim();
+  const msg = document.getElementById('customerMsg');
+  if (!name) { msg.textContent = 'Enter a customer name.'; return; }
+  try {
+    const res = await fetch(`/customers/${encodeURIComponent(name)}/summary`);
+    const data = await res.json();
+    if (!res.ok) {
+      msg.textContent = data.detail || 'Not found.';
+      return;
+    }
+    msg.textContent = `${data.customer_name}: ${data.total_orders} orders, ₹${data.total_spend} spent, favorite category: ${data.most_purchased_category}`;
+  } catch (e) {
+    msg.textContent = 'Lookup failed: ' + e;
+  }
+}
+
+refreshAll();
+</script>
+</body>
+</html>

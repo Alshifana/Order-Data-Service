@@ -1,0 +1,61 @@
+order_id,customer_name,email,product,category,quantity,price,order_date,city
+1008,Divya Nair,divya.nair@example.com,bluetooth speaker,Electronics,5,1499,,Bangalore
+1033,Karthik S,karthik.s@example.com,water bottle,FITNESS,3,299,05-07-2024,BANGALORE
+1055,,,,,,,,
+1026,Ravi Kumar,ravi.kumar@example.com,office chair,Furniture,2,4999,18 Apr 2024,Bangalore
+1023,Arjun Reddy,arjun.reddy@example.com,Bluetooth Speaker,Electronics,5,1499,09 Apr 2024,BANGALORE
+1010,Sneha Pillai,sneha.pillai@example.com,Desk Lamp,Furniture,1,899,04-19-2024,BANGALORE
+1017,Meera Iyer,meera.iyer@example.com,Wireless Mouse,Electronics,5,N/A,2024-06-16,chennai
+1016,Divya Nair,divya.nair@example.com,Water Bottle,Fitness,two,299,04-05-2024,Bangalore
+1025,Sneha Pillai,sneha.pillai@example.com,Running Shoes,FOOTWEAR,4,2499,2024-07-15,chennai
+1003,Aravind K,aravind@example.com,Notebook Set,STATIONERY,6,199,07-11-2024,Bangalore
+1022,John Mathew,john.mathew@example.com,backpack,ACCESSORIES,2,1299,2024-01-03,BANGALORE
+1052,Arjun Reddy,arjun.reddy@example.com,Backpack,Accessories,3,1299,2024-11-28,Mumbai
+1000,Ravi Kumar,ravi.kumar@example.com,Wireless Mouse,Electronics,6,599,08/05/2024,Bangalore
+1011,Vikram Rao,missing@domain,Notebook Set,Stationery,3,199,03-08-2024,Kochi
+1048,Divya Nair,divya.nair@example.com,Running Shoes,FOOTWEAR,6,2499,09-13-2024,Chennai
+1004,Ravi Kumar,ravi.kumar@example.com,bluetooth speaker,ELECTRONICS,4,1499,02-12-2024,Kochi
+1049,Priya Sharma,priya.sharma@example.com,Backpack,Accessories,3,1299,04 Jan 2024,Delhi
+1053,Arjun Reddy,arjun.reddy@example.com,Cotton T-Shirt,Apparel,6,399,18/05/2024,BANGALORE
+1003,Aravind K,aravind@example.com,Notebook Set,STATIONERY,6,199,07-11-2024,Bangalore
+1034,Divya Nair,divya.nair@example.com,Yoga Mat,Fitness,3,799,01 Feb 2024,Kochi
+1006,John Mathew,,Bluetooth Speaker,Electronics,1,1499,11-08-2024,chennai
+1044,Sneha Pillai,sneha.pillai@example.com,backpack,Accessories,6,1299,08/03/2024,Bangalore
+1010,Sneha Pillai,sneha.pillai@example.com,Desk Lamp,Furniture,1,899,04-19-2024,BANGALORE
+1051,Meera Iyer,meera.iyer@example.com,Water Bottle,Fitness,6,299,24/12/2024,Delhi
+1035,Ravi Kumar,ravi.kumar@example.com,Water Bottle,Fitness,2,299,09/09/2024,Delhi
+1031,Meera Iyer,meera.iyer@example.com,water bottle,FITNESS,2,299,2024-01-17,Bangalore
+1024,Karthik S,karthik.s@example.com,backpack,ACCESSORIES,4,1299,26 Apr 2024,Hyderabad
+1027,John Mathew,john.mathew@example.com,Bluetooth Speaker,Electronics,4,1499,2024-09-04,Coimbatore
+1036,Arjun Reddy,arjun.reddy@example.com,Desk Lamp,Furniture,2,899,08-27-2024,Kochi
+1019,John Mathew,john.mathew@example.com,Water Bottle,Fitness,6,299,12-07-2024,Hyderabad
+1007,Sneha Pillai,sneha.pillai@example.com,desk lamp,Furniture,4,,11-27-2024,Bangalore
+1002,Aravind K,aravind@example.com,water bottle,Fitness,2,299,21 Dec 2024,BANGALORE
+1001,Meera Iyer,meera.iyer@example.com,Bluetooth Speaker,ELECTRONICS,5,1499,2024-07-02,chennai
+1009,Meera Iyer,not-an-email,Office Chair,Furniture,6,4999,2024-06-27,BANGALORE
+1012,Arjun Reddy,@nodomain.com,office chair,Furniture,2,4999,2024-09-16,Chennai
+1014,Meera Iyer,meera.iyer@example.com,Wireless Mouse,ELECTRONICS,0,599,12-04-2024,Delhi
+1019,Meera Iyer,meera.iyer@example.com,Notebook Set,Stationery,2,199,16/11/2024,Mumbai
+1015,Vikram Rao,vikram.rao@example.com,Wireless Mouse,Electronics,6,-500,09/12/2024,Coimbatore
+1045,Arjun Reddy,arjun.reddy@example.com,Cotton T-Shirt,APPAREL,6,399,26/12/2024,Mumbai
+1021,Vikram Rao,vikram.rao@example.com,Water Bottle,Fitness,4,299,08/02/2024,chennai
+1039,Divya Nair,divya.nair@example.com,Water Bottle,Fitness,4,299,2024-05-28,chennai
+1040,Aravind K,aravind@example.com,Wireless Mouse,Electronics,3,599,03-21-2024,Bangalore
+1046,Sneha Pillai,sneha.pillai@example.com,Wireless Mouse,Electronics,4,599,07 Apr 2024,Delhi
+1050,Karthik S,karthik.s@example.com,Water Bottle,FITNESS,1,299,19/07/2024,Mumbai
+1018,Divya Nair,divya.nair@example.com,Office Chair,Furniture,1,4999,2024-04-19,chennai
+1005,,vikram.rao@example.com,Water Bottle,Fitness,1,299,07-03-2024,Kochi
+1042,Meera Iyer,meera.iyer@example.com,Notebook Set,Stationery,4,199,03-02-2024,Delhi
+1010,Sneha Pillai,sneha.pillai@example.com,Desk Lamp,Furniture,1,899,04-19-2024,BANGALORE
+1047,John Mathew,john.mathew@example.com,office chair,FURNITURE,1,4999,07 Nov 2024,Delhi
+1030,John Mathew,john.mathew@example.com,Desk Lamp,FURNITURE,2,899,2024-01-19,Delhi
+1032,John Mathew,john.mathew@example.com,Cotton T-Shirt,APPAREL,1,399,2024-10-08,Kochi
+1013,Priya Sharma,priya.sharma@example.com,Cotton T-Shirt,Apparel,-2,399,13 Feb 2024,Kochi
+1043,Aravind K,aravind@example.com,Running Shoes,Footwear,2,2499,2024-11-08,Delhi
+1054,Priya Sharma,priya.sharma@example.com,Backpack,ACCESSORIES,5,1299,2024-05-13,Mumbai
+1028,John Mathew,john.mathew@example.com,notebook set,Stationery,4,199,16/08/2024,Hyderabad
+1029,Aravind K,aravind@example.com,Cotton T-Shirt,Apparel,3,399,10 Aug 2024,Coimbatore
+1020,John Mathew,john.mathew@example.com,Water Bottle,Fitness,6,299,12-07-2024,Hyderabad
+1041,Sneha Pillai,sneha.pillai@example.com,Water Bottle,FITNESS,1,299,03/02/2024,Coimbatore
+1038,Meera Iyer,meera.iyer@example.com,Notebook Set,STATIONERY,3,199,20/05/2024,Delhi
+1037,Meera Iyer,meera.iyer@example.com,Wireless Mouse,ELECTRONICS,6,599,2024-09-10,Bangalore
