@@ -21,6 +21,7 @@ customers = [
     ("Vikram Rao", "vikram.rao@example.com"),
     ("Meera Iyer", "meera.iyer@example.com"),
     ("Karthik S", "karthik.s@example.com"),
+    ("Santhiya S", "santhiya.s@example.com"),
 ]
 
 products = [
