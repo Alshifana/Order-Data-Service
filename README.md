@@ -514,6 +514,22 @@ docker run -p 8000:8000 order-data-service
 
 Docker execution was not part of the primary local development workflow. The application was developed and tested using a Python virtual environment.
 
+## CI/CD
+
+The GitHub Actions workflow at `.github/workflows/ci-cd.yml` runs for pull requests and pushes to `main` or `master`.
+
+It:
+
+* Runs the test suite on Python 3.10 through 3.13
+* Builds the Docker image as a container validation step
+* Publishes the image to GitHub Container Registry on pushes to `main`
+
+The published image is available as:
+
+```text
+ghcr.io/<github-owner>/<repository>:latest
+```
+
 ---
 
 # Design Decisions
